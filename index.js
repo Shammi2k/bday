@@ -28,7 +28,7 @@ $(".timer").each(function (index, element) {
             $(element.parentElement.parentElement).removeClass("blur-image");
             $(element).next().show();
             $(element).remove();
-            clearInterval(x);
+            clearInterval(counter);
         }
     }, 1000);
 });
