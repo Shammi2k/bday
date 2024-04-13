@@ -7,24 +7,13 @@ $(".timer").each(function (index, element) {
             var hours = ("0" + Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).slice(-2);
             var minutes = ("0" + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).slice(-2);
             var seconds = ("0" + Math.floor((distance % (1000 * 60)) / 1000)).slice(-2);
-            if (!($($(element).find(".hours .value")).text() == hours))
-            {
-                $($(element).find(".hours .value")).text(hours);
-                $($(element).find(".hours .value")).toggleClass("changer");
-            }
-            if (!($($(element).find(".minutes .value")).text() == minutes))
-            {
-                $($(element).find(".minutes .value")).text(minutes);
-                $($(element).find(".minutes .value")).toggleClass("changer");
-            }
-            if (!($($(element).find(".seconds .value")).text() == seconds))
-            {
-                $($(element).find(".seconds .value")).text(seconds);
-                $($(element).find(".seconds .value")).toggleClass("changer");
-            }
+            $($(element).find(".hours .value")).text(hours);
+            $($(element).find(".minutes .value")).text(minutes);
+            $($(element).find(".seconds .value")).text(seconds);
         }
         else {
             // Reveal the image
+            showTime(element);
             $(element.parentElement.parentElement).removeClass("blur-image");
             $(element).next().show();
             $(element).remove();
@@ -67,7 +56,13 @@ function createBalloons(num) {
 }
 
 window.addEventListener("load", () => {
-  createBalloons(20)
+  createBalloons(10);
 });
 
 $('.carousel').bcSwipe({ threshold: 50 });
+
+function showTime(element)
+{
+	var curtain = element.parentElement.parentElement.firstElementChild;
+	$(curtain).addClass("open");
+}
