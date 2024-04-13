@@ -69,3 +69,5 @@ function createBalloons(num) {
 window.addEventListener("load", () => {
   createBalloons(20)
 });
+
+$('.carousel').bcSwipe({ threshold: 50 });
