@@ -59,7 +59,12 @@ window.addEventListener("load", () => {
   createBalloons(10);
 });
 
-$('.carousel').bcSwipe({ threshold: 50 });
+$("#carouselExample").swiperight(function() {
+    $(this).carousel('prev');
+  });
+ $("#carouselExample").swipeleft(function() {
+    $(this).carousel('next');
+ });
 
 function showTime(element)
 {
