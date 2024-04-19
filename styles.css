@@ -12,7 +12,13 @@ body {
 }
 
 .card-img-top {
-    width: 100%;
+    height: 80vh;
+    object-fit: contain;
+}
+
+span {
+    display: block;
+    text-align: center;
 }
 
 .timer {
@@ -47,7 +53,7 @@ body {
     z-index: -1;
 }
 
-.blur-image > img {
+.blur-image>img {
     visibility: hidden;
 }
 
@@ -64,16 +70,16 @@ body {
     overflow: hidden;
     transition: opacity 500ms;
     position: fixed;
-  }
-  
-  .balloon {
+}
+
+.balloon {
     height: 8rem;
     width: 7rem;
     border-radius: 75% 75% 70% 70%;
     position: relative;
-  }
-  
-  .balloon:before {
+}
+
+.balloon:before {
     content: "";
     height: 4.5rem;
     width: 1px;
@@ -85,123 +91,122 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-  }
-  
-  .balloon:after {
-      content: "▲";
-      text-align: center;
-      display: block;
-      position: absolute;
-      color: inherit;
-      top: 7.5rem;
-      left: 0;
-      right: 0;
-      margin: auto;
-  }
-  
-  @keyframes float {
-    from {transform: translateY(100vh);
-    opacity: 1;}
-    to {transform: translateY(-300vh);
-    opacity: 0;}
-  }
+}
 
-  @media screen and (max-width: 992px) {
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 7.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-300vh);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
     html {
         font-size: 10px;
     }
-  }
+}
 
 .curtain {
-	top: 0;
-	left: 0;
-	background: transparent;
+    top: 0;
+    left: 0;
+    background: transparent;
 }
 
 .curtain .left,
 .curtain .right {
-	position: fixed;
-	top: 0;
-	width: 50%;
-	height: 100vh;
-	/* filter: brightness(100%); */
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    /* filter: brightness(100%); */
     background-image:
-                linear-gradient(
-                        0deg,
-                        rgba(255,128,128,0.25),
-                        rgba(255,128,128,0) 75%
-                ),
-                linear-gradient(
-                        89deg,
-                        transparent,
-                        transparent 30%,
-                        #510A0E 35%,
-                        #510A0E 40%,
-                        #61100F 43%,
-                        #B93F3A 50%,
-                        #4B0408 55%,
-                        #6A0F18 60%,
-                        #651015 65%,
-                        #510A0E 70%,
-                        #510A0E 75%,
-                        rgba(255,128,128,0) 80%,
-                        transparent
-                ),
-                linear-gradient(
-                        92deg,
-                        #510A0E,
-                        #510A0E 20%,
-                        #61100F 25%,
-                        #B93F3A 40%,
-                        #4B0408 50%,
-                        #6A0F18 70%,
-                        #651015 80%,
-                        #510A0E 90%,
-                        #510A0E
-                )
-                ;
-        background-size:
-                auto,
-                300px 100%,
-                109px 100%;
-        background-repeat: repeat-x;
+        linear-gradient(0deg,
+            rgba(255, 128, 128, 0.25),
+            rgba(255, 128, 128, 0) 75%),
+        linear-gradient(89deg,
+            transparent,
+            transparent 30%,
+            #510A0E 35%,
+            #510A0E 40%,
+            #61100F 43%,
+            #B93F3A 50%,
+            #4B0408 55%,
+            #6A0F18 60%,
+            #651015 65%,
+            #510A0E 70%,
+            #510A0E 75%,
+            rgba(255, 128, 128, 0) 80%,
+            transparent),
+        linear-gradient(92deg,
+            #510A0E,
+            #510A0E 20%,
+            #61100F 25%,
+            #B93F3A 40%,
+            #4B0408 50%,
+            #6A0F18 70%,
+            #651015 80%,
+            #510A0E 90%,
+            #510A0E);
+    background-size:
+        auto,
+        300px 100%,
+        109px 100%;
+    background-repeat: repeat-x;
 }
 
 .curtain .left {
-	left: 0;
-	transform-origin: top right;
+    left: 0;
+    transform-origin: top right;
 }
+
 .curtain .right {
-	left: 50%;
-	transform-origin: top left;
+    left: 50%;
+    transform-origin: top left;
 }
 
 .ground {
-	position: absolute;
-	left: 50%;
-	top: 133%;
-	width: 10000px;
-	height: 10000px;
-	margin-left: -5000px;
-	border-radius: 100%;
-	box-shadow: 0 0 100px 100px white;
+    position: absolute;
+    left: 50%;
+    top: 133%;
+    width: 10000px;
+    height: 10000px;
+    margin-left: -5000px;
+    border-radius: 100%;
+    box-shadow: 0 0 100px 100px white;
 }
 
 h1 {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	display: block;
-	width: 500px;
-	height: 150px;
-	margin-top: -90px;
-	margin-left: -250px;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 10em;
-	color: white;
-	transform: scale(0.75);
-	opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 500px;
+    height: 150px;
+    margin-top: -90px;
+    margin-left: -250px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10em;
+    color: white;
+    transform: scale(0.75);
+    opacity: 0;
 }
 
 /* **********
@@ -210,77 +215,127 @@ h1 {
 
 .curtain.open .left,
 .curtain.open .right {
-	filter: brightness(100%);
+    filter: brightness(100%);
 }
+
 .curtain.open .left {
-	animation-fill-mode: forwards;
-	animation-name: curtain-opening, left-curtain-opening;
-	animation-duration: 2s, 4s;
-	animation-timing-function: ease-in-out, ease-in-out;
-	animation-delay: 0s, 0s;
-	animation-iteration-count: 1, 1;
-	animation-direction: normal, normal;
+    animation-fill-mode: forwards;
+    animation-name: curtain-opening, left-curtain-opening;
+    animation-duration: 2s, 4s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 0s, 0s;
+    animation-iteration-count: 1, 1;
+    animation-direction: normal, normal;
 }
+
 .curtain.open .right {
-	animation-fill-mode: forwards;
-	animation-name: curtain-opening, right-curtain-opening;
-	animation-duration: 2s, 4s;
-	animation-timing-function: ease-in-out, ease-in-out;
-	animation-delay: 0s, 0s;
-	animation-iteration-count: 1, 1;
-	animation-direction: normal, normal;
+    animation-fill-mode: forwards;
+    animation-name: curtain-opening, right-curtain-opening;
+    animation-duration: 2s, 4s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 0s, 0s;
+    animation-iteration-count: 1, 1;
+    animation-direction: normal, normal;
 }
 
 .fade-out {
-	animation-fill-mode: forwards;
-	animation-name: fade-out;
-	animation-duration: 1s;
-	animation-timing-function: ease-in;
-	animation-delay: 0s;
-	animation-iteration-count: 1;
-	animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
 }
 
 /* **********
 	animations
 ********** */
 
-@keyframes curtain-opening { /* 2s */
-	from { filter: brightness(180%); }
-	to { filter: brightness(100%); }
+@keyframes curtain-opening {
+
+    /* 2s */
+    from {
+        filter: brightness(180%);
+    }
+
+    to {
+        filter: brightness(100%);
+    }
 }
 
-@keyframes left-curtain-opening { /* 4s */ 
-	from { transform: translate(0) rotate(0) scale(1,1); }
-	to { transform: translate(-100%) rotate(20deg) scale(0,2); }
+@keyframes left-curtain-opening {
+
+    /* 4s */
+    from {
+        transform: translate(0) rotate(0) scale(1, 1);
+    }
+
+    to {
+        transform: translate(-100%) rotate(20deg) scale(0, 2);
+    }
 }
 
-@keyframes right-curtain-opening { /* 4s */
-	from { transform: translate(0) rotate(0) scale(1,1); }
-	to { transform: translate(100%) rotate(-20deg) scale(0,2); }
+@keyframes right-curtain-opening {
+
+    /* 4s */
+    from {
+        transform: translate(0) rotate(0) scale(1, 1);
+    }
+
+    to {
+        transform: translate(100%) rotate(-20deg) scale(0, 2);
+    }
 }
 
 @keyframes ground-rising {
-	from { top: 133%; }
-	to { top: 105%; }
+    from {
+        top: 133%;
+    }
+
+    to {
+        top: 105%;
+    }
 }
 
 @keyframes text-zoom {
-	from { transform: scale(0.75); }
-	to { transform: scale(1); }
+    from {
+        transform: scale(0.75);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 @keyframes text-fade-in {
-	from { opacity: 0; }
-	to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes text-glowing {
-	from { text-shadow: 0 0 10px white; }
-	to { text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px dodgerblue; }
+    from {
+        text-shadow: 0 0 10px white;
+    }
+
+    to {
+        text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px dodgerblue;
+    }
 }
 
 @keyframes fade-out {
-	from { color: black; opacity: 1; }
-	to { color: white; opacity: 0; }
+    from {
+        color: black;
+        opacity: 1;
+    }
+
+    to {
+        color: white;
+        opacity: 0;
+    }
 }
