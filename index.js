@@ -1,5 +1,5 @@
 $(".timer").each(function (index, element) {
-  var countdownDate = new Date("Apr 15, 2024 00:00:00").getTime() + $(element).attr("hours") * 60 * 60 * 1000;
+  var countdownDate = new Date("Apr 20, 2024 00:00:00").getTime() + $(element).attr("hours") * 60 * 60 * 1000;
   var counter = setInterval(() => {
     var now = new Date().getTime();
     var distance = countdownDate - now;
